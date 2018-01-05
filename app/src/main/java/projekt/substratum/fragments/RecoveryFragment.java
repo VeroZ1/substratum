@@ -138,6 +138,20 @@ public class RecoveryFragment extends Fragment {
             sheetDialog.show();
         });
 
+        // Icons Dialog
+        iconsButton.setOnClickListener(v -> {
+            sheetDialog = new SheetDialog(mContext);
+            View sheetView = View.inflate(mContext,
+                    R.layout.restore_icons_sheet_dialog, null);
+            LinearLayout restore = sheetView.findViewById(R.id.restore);
+            restore.setOnClickListener(view2 -> {
+                new IconsClearer(this).execute();
+                sheetDialog.hide();
+            });
+            sheetDialog.setContentView(sheetView);
+            sheetDialog.show();
+        });
+
         // Wallpaper Dialog
         wallpaperButton.setOnClickListener(v -> {
             sheetDialog = new SheetDialog(mContext);
@@ -293,8 +307,7 @@ public class RecoveryFragment extends Fragment {
 
         View iconsCard = root.findViewById(R.id.restore_icons_card);
         if (References.isSamsung(mContext) ||
-                !References.checkThemeInterfacer(mContext) ||
-                !References.isAuthorizedDebugger(mContext)) {
+                !References.checkThemeInterfacer(mContext)) {
             iconsCard.setVisibility(View.GONE);
         }
 

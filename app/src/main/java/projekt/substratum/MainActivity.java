@@ -442,7 +442,6 @@ public class MainActivity extends SubstratumActivity implements
                         .withIcon(R.drawable.nav_overlay_manager)
                         .withIdentifier(7));
         if (References.checkThemeInterfacer(getApplicationContext()) &&
-                References.isAuthorizedDebugger(getApplicationContext()) &&
                 !checkSamsungStatus)
             drawerBuilder.addDrawerItems(
                     new PrimaryDrawerItem()

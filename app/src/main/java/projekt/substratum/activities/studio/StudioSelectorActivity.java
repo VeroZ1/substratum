@@ -90,10 +90,6 @@ public class StudioSelectorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.studio_selector_activity);
 
-        if (!References.isAuthorizedDebugger(getApplicationContext())) {
-            finish();
-        }
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);

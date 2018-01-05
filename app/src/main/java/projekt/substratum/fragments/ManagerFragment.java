@@ -668,6 +668,7 @@ public class ManagerFragment extends Fragment {
         @Override
         protected void onPreExecute() {
             ManagerFragment fragment = ref.get();
+            Context context = fragment.context;
             fragment.materialSheetFab.hideSheet();
             fragment.loadingBar.setVisibility(View.VISIBLE);
         }
